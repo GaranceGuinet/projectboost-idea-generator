@@ -26,7 +26,7 @@ generateBtn.addEventListener("click", () => {
     // Désactive le bouton et affiche un message pendant la génération
     generateBtn.disabled = true
     ideaText.textContent = "Génération en cours..."
-    // Délai artificiel pour simuler un temps de génération
+    // Lance la génération après un court délai
     setTimeout (() => {
     // Génère un index aléatoire différent du précédent
 do {
