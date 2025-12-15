@@ -1,5 +1,7 @@
 # ProjectBoost
 
+https://garanceguinet.github.io/projectboost-idea-generator/
+
 ## Description
 
 ProjectBoost est un générateur d'idées de projets web destiné aux développeurs débutants.
