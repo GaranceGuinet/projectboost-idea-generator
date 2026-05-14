@@ -44,5 +44,4 @@ En un clic, l'utilisateur obtient une idée de projet à réaliser afin de s'ent
 - Améliorer le design et l'ergonomie de l'interface (responsive, animations CSS)
 - Ajouter un compteur ou un historique des idées générées
   
-Ce projet s'inscrit dans ma démarche de reconversion vers le développement web et dans ma recherche d'une alternance, avec une forte motivation à progresser rapidement et à m'investir pleinement en entreprise.
 
