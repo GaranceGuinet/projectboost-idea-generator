@@ -1,5 +1,8 @@
 # ProjectBoost - Générateur d'idées de projets web
 
+## Aperçu du projet 
+<img width="625" height="370" alt="image" src="https://github.com/user-attachments/assets/559f1f92-7436-4798-82b9-6767a94d59e8" />
+
 ## Démo en ligne
 Accéder à l'application :
 https://garanceguinet.github.io/projectboost-idea-generator/
