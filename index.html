@@ -1,29 +1,86 @@
-‌<!DOCTYPE html>
+<!doctype html>
 <html lang="fr">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ProjectBoost – Générateur d'idées de projets web</title>
-  <link rel="stylesheet" href="style.css">
-  <script src="script.js" defer></script>
-</head>
-<body>
- 
-  <main class="container">
-    <h1>ProjectBoost</h1>
-    <p class="subtitle">
-      Générateur d'idées de projets web pour développeurs débutants
-    </p>
- 
-    <div class="idea-box">
-      <p id="idea">
-        Clique sur le bouton pour générer une idée de projet 
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <meta
+      name="description"
+      content="ProjectBoost génère des idées de projets web selon une catégorie et un niveau de difficulté, avec compétences associées et gestion des favoris."
+    />
+
+    <title>ProjectBoost – Générateur d'idées de projets web</title>
+
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
+  </head>
+
+  <body>
+    <main class="container">
+      <h1>ProjectBoost</h1>
+
+      <p class="subtitle">
+        Générateur d'idées de projets web pour développeurs débutants
       </p>
-    </div>
- 
-    <button id="generate-btn">
-      Générer une idée de projet
-    </button>
-  </main>
-</body>
+
+      <div class="filters">
+        <div class="filter-group">
+          <label for="category-filter">Catégorie</label>
+          <select id="category-filter">
+            <option value="all">Toutes</option>
+            <option value="HTML/CSS">HTML/CSS</option>
+            <option value="JavaScript">JavaScript</option>
+            <option value="API">API</option>
+          </select>
+        </div>
+
+        <div class="filter-group">
+          <label for="difficulty-filter">Difficulté</label>
+          <select id="difficulty-filter">
+            <option value="all">Toutes</option>
+            <option value="Débutant">Débutant</option>
+            <option value="Intermédiaire">Intermédiaire</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="idea-box" id="idea-box" aria-live="polite">
+        <p id="idea">Clique sur le bouton pour générer une idée de projet</p>
+
+        <div id="idea-details" hidden>
+          <div class="idea-meta">
+            <span id="idea-category"></span>
+            <span id="idea-difficulty"></span>
+          </div>
+
+          <p id="idea-description"></p>
+
+          <div class="idea-skills">
+            <h2>Compétences travaillées</h2>
+            <ul id="idea-skills-list"></ul>
+          </div>
+        </div>
+
+        <button id="favorite-btn" type="button" hidden>
+          Ajouter aux favoris
+        </button>
+      </div>
+
+      <button id="generate-btn" type="button">
+        Générer une idée de projet
+      </button>
+
+      <section
+        class="favorites"
+        aria-labelledby="favorites-title"
+        aria-live="polite"
+      >
+        <h2 id="favorites-title">Mes favoris</h2>
+
+        <p id="favorites-empty">Aucun projet ajouté aux favoris.</p>
+
+        <ul id="favorites-list"></ul>
+      </section>
+    </main>
+  </body>
 </html>

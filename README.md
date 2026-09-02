@@ -1,50 +1,94 @@
-# ProjectBoost - Générateur d'idées de projets web
+# ProjectBoost
 
-## Aperçu du projet 
-<img width="625" height="370" alt="image" src="https://github.com/user-attachments/assets/559f1f92-7436-4798-82b9-6767a94d59e8" />
-
-## Démo en ligne
-Accéder à l'application :
-https://garanceguinet.github.io/projectboost-idea-generator/
-
-## Contexte du projet
-Ce projet a été réalisé dans un contexte d'autoformation intensive au developpement web, en parallèle d'une activité professionnelle à temps plein. Il s'agit de mon premier projet personnel, developpé afin de consolider mes bases en JavaScript (manipulation du DOM, gestion des évenements, logique conditionnelle).
-
-## Description
 ProjectBoost est un générateur d'idées de projets web destiné aux développeurs débutants.
-En un clic, l'utilisateur obtient une idée de projet à réaliser afin de s'entraîner en développement web.
+
+L'application permet de générer aléatoirement une idée de projet selon une catégorie et un niveau de difficulté, puis d'afficher les compétences associées au projet.
+
+## Aperçu
+
+![Aperçu de ProjectBoost](./assets/images/preview.png)
+
+## Démo
+
+[Voir ProjectBoost en ligne](https://garanceguinet.github.io/projectboost-idea-generator/)
 
 ## Fonctionnalités
-- Génération aléatoire d'idées de projets web
-- Empêche l'affichage de la même idée deux fois de suite
-- Bouton temporairement désactivé pendant la génération
-- Message de chargement simulé ("Génération en cours...")
 
-## Compétences mises en oeuvre
-- Manipulation du DOM en JavaScript 
-- Gestion des évenements ( `addEventListener` )
-- Génération de valeurs aléatoires et utilisation de tableaux
-- Boucle `do...while`et logique de prévention des doublons (mémoire du dernier index)
-- Utilisation d'une fonction asynchrone simple via `setTimeout`
-- Organisation d'un mini-projet front-end (HTML / CSS / JS)
+- génération aléatoire d'idées de projets ;
+- filtrage par catégorie : HTML/CSS, JavaScript ou API ;
+- filtrage par niveau de difficulté ;
+- affichage du titre, de la description et des compétences travaillées ;
+- prévention de l'affichage consécutif de la même idée ;
+- gestion du cas où aucun projet ne correspond aux filtres sélectionnés ;
+- ajout et suppression de projets favoris ;
+- sauvegarde des favoris dans le navigateur avec `localStorage` ;
+- conservation des favoris après actualisation de la page ;
+- interface responsive adaptée aux écrans mobiles et desktop.
 
-## Technologies utilisées 
+## Technologies
+
 - HTML5
 - CSS3
 - JavaScript
+- DOM
+- Local Storage
 
-## Installation / utilisation
-1. Cloner le dépôt ou télécharger les fichiers
-2. Ouvrir le fichier `index.html` dans un navigateur
-3. Cliquer sur le bouton **"Générer une idée de projet"**
+Aucune librairie ni framework n'est utilisé.
 
-## Améliorations possibles
-- Ajouter des catégories d'idées (HTML / CSS / JavaScript / projets complets)
-- Permettre à l'utilisateur de choisir un niveau de difficulté
-- Ajouter une animation ou un effet visuel pendant la phase de génération
-- Enrichir la liste d'idées ou permettre l'ajout d'idées personnalisées
-- Sauvegarder les idées déjà générées pour éviter les répétitions sur plusieurs sessions
-- Améliorer le design et l'ergonomie de l'interface (responsive, animations CSS)
-- Ajouter un compteur ou un historique des idées générées
-  
+## Fonctionnement
 
+Les idées de projets sont stockées sous forme d'objets JavaScript contenant plusieurs informations :
+
+```javascript
+{
+  title: "Développer une to-do list",
+  category: "JavaScript",
+  difficulty: "Débutant",
+  description:
+    "Créer une application permettant d'ajouter, terminer et supprimer des tâches.",
+  skills: ["DOM", "Événements", "Tableaux"],
+}
+```
+
+Les filtres sélectionnés par l'utilisateur sont appliqués avec `Array.filter()` avant la génération aléatoire d'une idée.
+
+Les favoris sont enregistrés dans le `localStorage` du navigateur afin d'être conservés entre les différentes visites.
+
+## Accessibilité
+
+L'interface comprend notamment :
+
+- des labels associés aux différents filtres ;
+- des styles `:focus-visible` pour la navigation au clavier ;
+- des zones dynamiques utilisant `aria-live` afin de signaler les changements de contenu ;
+- des boutons de suppression disposant d'un libellé accessible spécifique au projet concerné.
+
+## Responsive
+
+L'interface s'adapte aux différentes tailles d'écran.
+
+Sur mobile :
+
+- les filtres passent en colonne ;
+- les boutons occupent l'espace disponible ;
+- les favoris s'adaptent à la largeur de l'écran.
+
+## Structure du projet
+
+```text
+projectboost-idea-generator/
+├── assets/
+│   └── images/
+│       └── preview.png
+├── index.html
+├── style.css
+├── script.js
+├── README.md
+└── .gitattributes
+```
+
+## Lancement
+
+Aucune installation n'est nécessaire.
+
+Le projet peut être ouvert directement depuis `index.html` ou lancé avec un serveur local comme Live Server.
